@@ -1,0 +1,28 @@
+<% @page_title = "Subjects" %>
+
+<h2>Subjects</h2>
+<div class="subjects index">
+	<%= link_to('Add New Subject',{action:'new'}, class:'btn btn-primary') %>
+	<table class="table" summary="Subject list">
+		<tr class="header">
+			<th>&nbsp</th>
+			<th>Subjects</th>
+			<th>Visible</th>
+			<th>Page</th>
+			<th>Action</th>
+		</tr>
+		<% @subjects.each do |subject|  %>
+		<tr>
+			<td><%= subject.position %></td>
+			<td><%= subject.name %></td>
+			<td class="center"><%= status_tag(subject.visible) %></td>
+			<td class="center"><%= subject.pages.size %></td>
+			<td class="actions">
+				<%= link_to("Show",{action:'show', id:subject.id},class:'btn btn-sm btn-success') %>
+				<%= link_to("Edit",{action:'edit', id:subject.id},class:'btn btn-sm btn-primary') %>
+				<%= link_to("Delete",{action:'delete', id:subject.id},class:'btn btn-sm btn-danger') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

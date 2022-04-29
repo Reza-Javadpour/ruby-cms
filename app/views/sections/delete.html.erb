@@ -1,0 +1,21 @@
+<% @page_title = "Delete Section" %>
+
+<%= link_to('<< Back to List',{action:'index'},class:'btn btn-sm btn-dark') %>
+
+<div class="section delete">
+	
+	<h2>Section Delete</h2>
+
+	<%= form_for(:section,url:{action:'destroy',id:@section.id}) do |f| %>
+
+		<p>Are you sure delete this Section ?</p>
+		
+		<p class="reference-name"><%= @section.name %></p>
+		
+		<div class="form-buttons">
+			<%= submit_tag('Delete Section' , class:'btn btn-danger') %>
+		</div>
+
+	<% end %>
+
+</div>

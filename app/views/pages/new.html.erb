@@ -1,0 +1,19 @@
+<% @page_title = 'New Page' %>
+
+<%= link_to('<< Back to List',{action:'index'},class:'btn btn-sm btn-dark') %>
+
+<div class="pages new">
+	
+	<h2>New Page</h2>
+
+	<%= form_for(:page,url:{action:'create'}) do |f| %>
+
+	<%= render(partial:'form',locals:{f:f}) %>
+
+	<div  class="form-buttons">
+		<%= submit_tag('Create Page' , class:'btn btn-primary') %>
+	</div>
+
+	<% end %>
+
+</div>

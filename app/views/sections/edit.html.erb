@@ -1,0 +1,20 @@
+<% @page_title = "Edit Section" %>
+
+<%= link_to('<< Back to List',{action:'index'},class:'btn btn-sm btn-dark') %>
+
+<div class="sections Edit">
+	<h2>Section Edit</h2>
+
+
+	<%= form_for(:section,url:{action:'update',id:@section.id}) do |f| %>
+
+		<%= render(partial:'form',locals:{f:f}) %>
+
+		<div class="form-buttons">
+			<%= submit_tag("Update Section", class:"btn btn-primary") %>
+		</div>
+
+	<% end %>
+
+
+</div>
